@@ -5,11 +5,20 @@ from src.classes.SearchAlgorithms import BuscaProfundidadeIterativa
 from src.classes.SearchAlgorithms import BuscaCustoUniforme
 from src.classes.SearchAlgorithms import BuscaGananciosa
 from src.classes.SearchAlgorithms import AEstrela
+from src.classes.Puzzle import Puzzle
+
+easy = [[1,2,3],[0,8,4],[7,6,5]]
+medium = [[8,1,3],[0,7,2],[6,5,4]]
+hard = [[7,8,6],[2,3,5],[1,4,0]]
+hard1 = [[7,8,6], [2,3,5], [0,1,4]]
 
 def main():
     print('Busca em largura')
-    state = U2([], ['bono', 'larry', 'adam', 'edge'], 'right', 17, '', 0)
-    algorithm = BuscaCustoUniforme()
+    state = Puzzle(0, 2, hard1, "; ")
+    print()
+    for line in state.board:
+        print ('  '.join(map(str, line)))
+    algorithm = AEstrela()
     inicio = datetime.now()
     result = algorithm.search(state)
     fim = datetime.now()
