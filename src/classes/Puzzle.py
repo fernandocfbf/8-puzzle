@@ -16,7 +16,7 @@ class Puzzle(State):
         self.operator = operator #current operation
 
     def env(self):
-        return " ; {0}".format(self.board)
+        return "{0}".format(self.board)
 
     def sucessors(self):
         childrens = list()
@@ -26,7 +26,6 @@ class Puzzle(State):
         [-1, 0],        [1,  0],
                 [0,  1]
         ]
-
         for pos in possibilities:
             mov_y = self.y + pos[1]
             mov_x = self.x + pos[0]
