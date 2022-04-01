@@ -4,6 +4,7 @@ from datetime import date, datetime
 from src.constants.goal_position import GOAL_BOARD
 from utils.check_solvable import isSolvable
 
+
 def test01():
     board = [
         [8,1,3],
